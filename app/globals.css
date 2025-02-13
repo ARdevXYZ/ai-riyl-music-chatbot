@@ -8,6 +8,11 @@
   --ar: #00FF00;
 }
 
+* {
+  border-color: var(--ar) !important;
+  color: var(--ar) !important;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -19,6 +24,11 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-geist-mono);
+}
+
+.app-title {
+  font-size: 1rem !important;
+  font-weight: normal !important;
 }
 
 button, input, optgroup, select, textarea {
@@ -33,4 +43,6 @@ button, input, optgroup, select, textarea {
   margin: 0;
   padding: 0;
   background: transparent;
+  background: #555555 !important;
+  color: #00FF00 !important;
 }

@@ -39,7 +39,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center p-6">
-      <h1 className="text-2xl font-bold mb-4">🎵 RIYL Music Chatbot!</h1>
+      <h1 className="text-2xl font-bold mb-4 app-title">🎵 AI RIYL Music Bot </h1>
       <div className="w-full max-w-md border p-4 h-96 overflow-y-auto mb-4">
         {messages.map((msg, index) => (
           <p key={index} className={msg.sender === "user" ? "text-right text-blue-600" : "text-left text-gray-800"}>
