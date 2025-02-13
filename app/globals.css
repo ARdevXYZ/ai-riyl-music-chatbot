@@ -44,5 +44,5 @@ button, input, optgroup, select, textarea {
   padding: 0;
   background: transparent;
   background: #555555 !important;
-  color: #00FF00 !important;
+  color: var(--ar) !important;
 }
