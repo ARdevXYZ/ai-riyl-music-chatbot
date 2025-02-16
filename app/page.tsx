@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   sender: "user" | "bot";
@@ -39,12 +40,21 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center p-6">
-      <h1 className="text-2xl font-bold mb-4 app-title">🎵 AI RIYL Music Bot </h1>
+      <h1 className="text-3xl font-bold mb-4 app-title">
+        🎵 Ai RIYL Music Recommendations
+      </h1>
       <div className="w-full max-w-md border p-4 h-96 overflow-y-auto mb-4">
         {messages.map((msg, index) => (
-          <p key={index} className={msg.sender === "user" ? "text-right text-blue-600" : "text-left text-gray-800"}>
-            {msg.text}
-          </p>
+          <div
+            key={index}
+            className={msg.sender === "user" ? "text-right text-green-600" : "text-left text-gray-100"}
+          >
+            {msg.sender === "bot" ? (
+              <ReactMarkdown>{msg.text}</ReactMarkdown>
+            ) : (
+              <p>{msg.text}</p>
+            )}
+          </div>
         ))}
       </div>
       <input

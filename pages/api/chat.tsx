@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { OpenAI } from "openai";
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || "", // Ensure the API key is set in your .env file
+  apiKey: process.env.OPENAI_API_KEY || "", 
 });
 
 interface ChatResponse {

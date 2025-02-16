@@ -5,18 +5,22 @@
 :root {
   --background: transparent;
   --foreground: #171717;
-  --ar: #00FF00;
+  --ar: #f7f7f7;
+}
+
+::selection {
+  background: #00FF00;
+  color: #000000;
 }
 
 * {
   border-color: var(--ar) !important;
-  color: var(--ar) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #00FF00;
+    --foreground: #FFF;
   }
 }
 
@@ -31,6 +35,12 @@ body {
   font-weight: normal !important;
 }
 
+ol, ul, menu {
+  list-style: auto;
+  margin-left: 2rem;
+  padding: 0rem;
+}
+
 button, input, optgroup, select, textarea {
   font-family: inherit;
   font-feature-settings: inherit;
@@ -43,6 +53,6 @@ button, input, optgroup, select, textarea {
   margin: 0;
   padding: 0;
   background: transparent;
-  background: #555555 !important;
-  color: var(--ar) !important;
+  background: #222222 !important;
+  /* color: var(--ar) !important; */
 }
