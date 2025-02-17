@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import { OpenAI } from "openai";
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY || "", 
+  apiKey: process.env.OPENAI_API_KEY || "",
 });
 
 interface ChatResponse {
@@ -31,8 +31,8 @@ export default async function handler(
       model: "gpt-3.5-turbo",
       messages: [
         { role: "system", content: "You are a helpful chatbot." },
-        { role: "user", content: concatenatedPrompt }
-      ]
+        { role: "user", content: concatenatedPrompt },
+      ],
     });
 
     const botMessage = completion.choices[0]?.message?.content;
@@ -45,15 +45,17 @@ export default async function handler(
   } catch (error) {
     console.error("Error communicating with AI:", error);
 
-    // Handle 429 error (quota exceeded)
-    if (error.response && error.response.status === 429) {
-      return res.status(429).json({
-        response:
-          "You have exceeded your API usage quota. Please check your plan or try again later.",
-      });
+    // Ensure error object is properly checked before accessing properties
+    if (typeof error === "object" && error !== null && "response" in error) {
+      const errResponse = error as { response?: { status?: number } };
+      if (errResponse.response?.status === 429) {
+        return res.status(429).json({
+          response:
+            "You have exceeded your API usage quota. Please check your plan or try again later.",
+        });
+      }
     }
 
-    // Other errors
-    return res.status(500).json({ response: "Error: Unable to fetch AI response" });
+    return res.status(500).json({ response: "Internal server error" });
   }
 }
