@@ -2,45 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force dark mode at the highest level */
+html {
+  color-scheme: dark !important;
+}
+
 :root {
-  --background: #000000;
-  --foreground: #FFF;
-  --ar: #f7f7f7;
+  --background: #0a0a0a !important;
+  --foreground: #FFF !important;
+  --ar: #f7f7f7 !important;
 }
 
 ::selection {
-  background: #00FF00;
-  color: #000000;
+  background: #00FF00 !important;
+  color: #000000 !important;
 }
 
 * {
   border-color: var(--ar) !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #FFF;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #FFF;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--foreground) !important;
+  background: var(--background) !important;
   font-family: cyanFontFour;
 }
 
+/* Ensure app title styling is applied */
 .app-title {
   font-size: 1rem !important;
   font-weight: normal !important;
 }
+
 /* List styling */
 ol, ul, menu {
   list-style: auto;
@@ -48,6 +41,7 @@ ol, ul, menu {
   padding: 0rem;
 }
 
+/* Form elements */
 button, input, optgroup, select, textarea {
   font-family: inherit;
   font-feature-settings: inherit;
@@ -59,7 +53,5 @@ button, input, optgroup, select, textarea {
   color: inherit;
   margin: 0;
   padding: 0;
-  background: transparent;
   background: #222222 !important;
-  /* color: var(--ar) !important; */
 }
