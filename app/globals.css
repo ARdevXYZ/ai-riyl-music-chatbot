@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: transparent;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #FFF;
   --ar: #f7f7f7;
 }
 
@@ -24,10 +24,17 @@
   }
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #FFF;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-geist-mono);
+  font-family: cyanFontFour;
 }
 
 .app-title {
