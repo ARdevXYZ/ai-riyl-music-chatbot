@@ -15,40 +15,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 const cyanFont = localFont({
-  src: [
-    {
-      path: '../public/fonts/Brown-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-cyan-font-brown',
-});
-
-const cyanFontTwo = localFont({
-  src: [
-    {
-      path: '../public/fonts/Akkurat-Normal.otf',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-cyan-font-akkurat',
-});
-
-const cyanFontThree = localFont({
-  src: [
-    {
-      path: '../public/fonts/CircularStd-Book.otf',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-cyan-font-circular',
-});
-
-const cyanFontFour = localFont({
   src: [
     {
       path: '../public/fonts/GT-Haptik-Regular.otf',
@@ -57,17 +25,6 @@ const cyanFontFour = localFont({
     },
   ],
   variable: '--font-cyan-font-gt-haptik',
-});
-
-const cyanFontFive = localFont({
-  src: [
-    {
-      path: '../public/fonts/Graphik-Regular.otf',
-      weight: '400',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-cyan-font-grafik',
 });
 
 export const metadata: Metadata = {
@@ -111,7 +68,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       </head>
-      <body className={`antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${cyanFont.className} antialiased`}>
         {children}
         <Analytics />
       </body>
