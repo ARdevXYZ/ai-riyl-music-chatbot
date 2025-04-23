@@ -7,6 +7,13 @@ html {
   color-scheme: dark !important;
 }
 
+body {
+  font-family: system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
 :root {
   --background: #0a0a0a !important;
   --foreground: #FFF !important;

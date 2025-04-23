@@ -19,12 +19,12 @@ const geistMono = Geist_Mono({
 const cyanFont = localFont({
   src: [
     {
-      path: '../public/fonts/GT-Haptik-Regular.otf',
+      path: '../public/fonts/GT-Flexa-Mono-Regular.otf',
       weight: '400',
       style: 'normal',
     },
   ],
-  variable: '--font-cyan-font-gt-haptik',
+  variable: '--font-cyan-font-gt-flexa',
 });
 
 export const metadata: Metadata = {

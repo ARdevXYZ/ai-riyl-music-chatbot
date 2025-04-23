@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 
 interface Message {
@@ -11,6 +11,7 @@ export default function Home() {
   const [input, setInput] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const bottomRef = useRef<HTMLDivElement | null>(null);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -38,7 +39,7 @@ export default function Home() {
 
       setMessages((prev) => {
         const updated = [...prev];
-        updated[updated.length - 1] = { sender: "bot", text: data.response }; // Replace "Loading ..." with real response
+        updated[updated.length - 1] = { sender: "bot", text: data.response };
         return updated;
       });
     } catch (error) {
@@ -56,10 +57,14 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   return (
     <div className="flex flex-col items-center p-6">
-      <h1 className="text-3xl font-bold mb-4 app-title">
-        🎵 Ai RIYL Music Recommendations
+      <h1 className="text-3xl font-bold mb-4 app-title" aria-title="AI Music Recommendations Generator" title="AI Music Recommendations Generator">
+        🎵 AI Music Recommendations Generator
       </h1>
       <div className="w-full max-w-md border p-4 h-96 overflow-y-auto mb-4 bg-gray-900 text-white rounded">
         {messages.map((msg, index) => (
@@ -76,19 +81,22 @@ export default function Home() {
             )}
           </div>
         ))}
+        <div ref={bottomRef} />
       </div>
       <input
         className="border p-2 w-full max-w-md"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-        placeholder="Type a band or artist..."
+        placeholder="Type a band or artist ..."
         disabled={loading}
       />
       <button
         className="mt-2 px-4 py-2 bg-blue-500 text-white disabled:opacity-50"
         onClick={sendMessage}
         disabled={loading}
+        title="Generate recommendations"
+        aria-label="Generate recommendations"
       >
         Send
       </button>
