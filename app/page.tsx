@@ -380,7 +380,8 @@ export default function Home() {
 
     const userText = input;
     const userMessage: Message = { sender: "user", text: userText };
-    const optimisticMessages = [...messages, userMessage, { sender: "bot", text: "" }];
+    const botPlaceholder: Message = { sender: "bot", text: "" };
+    const optimisticMessages: Message[] = [...messages, userMessage, botPlaceholder];
 
     let chatId = selectedChatId;
     if (!chatId) {
