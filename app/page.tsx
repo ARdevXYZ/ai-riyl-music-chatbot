@@ -127,7 +127,7 @@ function MainPanel({
   onInputChange: (value: string) => void;
   onSend: () => void;
   loading: boolean;
-  bottomRef: React.RefObject<HTMLDivElement>;
+  bottomRef: React.RefObject<HTMLDivElement | null>;
 }) {
   return (
     <div className="flex h-full flex-col">
@@ -223,7 +223,7 @@ function AppShell({
   onInputChange: (value: string) => void;
   onSend: () => void;
   loading: boolean;
-  bottomRef: React.RefObject<HTMLDivElement>;
+  bottomRef: React.RefObject<HTMLDivElement | null>;
 }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
