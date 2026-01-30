@@ -33,7 +33,7 @@ function Spinner() {
   return (
     <div className="flex items-center gap-2 text-zinc-300">
       <span className="h-4 w-4 rounded-full border-2 border-zinc-500 border-t-transparent animate-spin" />
-      <span className="text-xs">Thinking...</span>
+      <span className="text-xs">Finding music rex...</span>
     </div>
   );
 }
