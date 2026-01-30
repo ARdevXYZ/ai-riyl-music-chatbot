@@ -280,7 +280,7 @@ function AppShell({
             <div className="flex items-center justify-between border-b border-zinc-400 px-4 py-3">
               <div className="text-sm font-semibold text-zinc-100">AI Music Recommendations</div>
               <button
-                className="rounded p-1 text-zinc-400 hover:text-zinc-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="rounded-lg bg-black border border-zinc-500 px-3 py-2 text-xs font-semibold text-white hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                 onClick={() => setIsSidebarOpen(false)}
                 aria-label="Close sidebar"
               >
