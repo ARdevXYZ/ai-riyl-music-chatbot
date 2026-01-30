@@ -15,9 +15,11 @@ body {
 
 
 :root {
-  --background: #0a0a0a !important;
-  --foreground: #FFF !important;
-  --ar: #f7f7f7 !important;
+  --background: #0a0a0a;
+  --foreground: #FF0000;
+  --ar: #f7f7f7 ;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
@@ -26,19 +28,19 @@ body {
 }
 
 * {
-  border-color: var(--ar) !important;
+  border-color: var(--ar);
 }
 
 body {
-  color: var(--foreground) !important;
-  background: var(--background) !important;
+  color: var(--foreground);
+  background: var(--background);
   font-family: cyanFontFour;
 }
 
 /* Ensure app title styling is applied */
 .app-title {
-  font-size: 1rem !important;
-  font-weight: normal !important;
+  font-size: 1rem;
+  font-weight: normal;
 }
 
 /* List styling */
@@ -60,5 +62,5 @@ button, input, optgroup, select, textarea {
   color: inherit;
   margin: 0;
   padding: 0;
-  background: #222222 !important;
+  background: #222222;
 }
