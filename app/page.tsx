@@ -20,7 +20,7 @@ const TITLE_LIMIT = 48;
 
 const makeTitle = (text: string) => {
   const trimmed = text.trim();
-  if (!trimmed) return "New chat";
+  if (!trimmed) return "New RIYL";
   return trimmed.length > TITLE_LIMIT ? `${trimmed.slice(0, TITLE_LIMIT)}…` : trimmed;
 };
 
@@ -62,9 +62,9 @@ function Sidebar({
         <button
           className="mt-3 w-full rounded-lg border border-zinc-700 bg-black px-3 py-2 text-sm text-zinc-100 hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
           onClick={onNewChat}
-          aria-label="New chat"
+          aria-label="New Chat"
         >
-          New chat
+          New RIYL
         </button>
         <div className="mt-3">
           <input
