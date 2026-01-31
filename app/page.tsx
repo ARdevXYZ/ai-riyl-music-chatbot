@@ -32,7 +32,7 @@ const makeId = () => {
 function Spinner() {
   return (
     <div className="flex items-center gap-2 text-pollen">
-      <span className="h-4 w-4 rounded-full border-2 border-[#FFFF00] border-t-[#FF00CC] animate-spin" />
+      <span className="h-4 w-4 rounded-full border-2 border-[#333333] border-t-[#FFFF00] animate-spin" />
       <span className="text-xs">Finding your curated music rex ...</span>
     </div>
   );
