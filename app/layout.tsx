@@ -19,9 +19,54 @@ const geistMono = Geist_Mono({
 const cyanFont = localFont({
   src: [
     {
-      path: '../public/fonts/GT-Flexa-Mono-Regular.otf',
-      weight: '400',
-      style: 'normal',
+      path: "../public/fonts/GT-Flexa-Mono-Thin.otf",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Thin-Italic.otf",
+      weight: "100",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Light.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Light-Italic.otf",
+      weight: "300",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Regular-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Medium.otf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Medium-Italic.otf",
+      weight: "500",
+      style: "italic",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/GT-Flexa-Mono-Bold-Italic.otf",
+      weight: "700",
+      style: "italic",
     },
   ],
   variable: '--font-cyan-font-gt-flexa',

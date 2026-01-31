@@ -33,7 +33,7 @@ function Spinner() {
   return (
     <div className="flex items-center gap-2 text-pollen">
       <span className="h-4 w-4 rounded-full border-2 border-[#333333] border-t-[#FFFF00] animate-spin" />
-      <span className="text-xs">Finding your curated music rex ...</span>
+      <span className="text-sm">Finding your curated music rex ...</span>
     </div>
   );
 }
@@ -58,7 +58,7 @@ function Sidebar({
   return (
     <div className="flex h-full flex-col">
       <div className="p-4 border-b border-dotted border-pollen">
-        <div className="text-sm font-semibold tracking-wide text-pollen">AI RIYL Music Recommendations</div>
+        <div className="text-sm font-medium tracking-wide text-pollen">AI RIYL Music Recommendations</div>
         <button
           className="mt-3 w-full rounded-lg border border-pollen bg-black px-3 py-2 text-sm text-pollen cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
           onClick={onNewChat}
@@ -78,28 +78,28 @@ function Sidebar({
       </div>
       <div className="flex-1 overflow-y-auto p-4">
         {chats.length === 0 ? (
-          <div className="px-3 py-4 text-xs text-pollen">No chats yet</div>
+          <div className="px-3 py-4 text-sm text-pollen">No chats yet</div>
         ) : (
           <div className="space-y-1">
-            <h3 className="text-sm text-light tracking-wide italic uppercase mt-2 mb-2" aria-label="Your History" title="Your History">Your History</h3>
+            <h3 className="text-sm font-medium tracking-wide italic uppercase mt-2 mb-2" aria-label="Your History" title="Your History">Your History</h3>
             {chats.map((chat) => {
               const isActive = chat.id === selectedChatId;
               return (
                 <div
                   key={chat.id}
-                  className={`group flex items-center justify-between rounded-lg px-3 py-2 text-sm bg-zinc-900 hover:bg-zinc-900 ${
+                  className={`group flex min-w-0 items-center justify-between rounded-lg px-3 py-2 text-sm bg-zinc-900 hover:bg-zinc-900 ${
                     isActive ? "text-pollen" : "text-pollen"
                   }`}
                 >
                   <button
-                    className="flex-1 truncate !bg-zinc-900 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="min-w-0 flex-1 truncate-text !bg-zinc-900 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                     onClick={() => onSelectChat(chat.id)}
                     aria-label={`Open chat ${chat.title}`}
                   >
                     {chat.title}
                   </button>
                   <button
-                    className="ml-2 rounded p-1 !bg-zinc-900 text-pollen hover:text-pollen focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="ml-2 shrink-0 rounded p-1 !bg-zinc-900 text-pollen hover:text-pollen focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                     onClick={() => onDeleteChat(chat.id)}
                     aria-label="Delete chat"
                   >
@@ -135,7 +135,7 @@ function MainPanel({
       <div className="flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-3xl px-4 py-6 space-y-4">
           {messages.length === 0 ? (
-            <div className="rounded-2xl border border-pollen bg-black p-6 text-sm text-pollen">
+            <div className="rounded-2xl font-light border border-pollen bg-black p-6 text-sm text-pollen">
               Ask for music recommendations and get curated suggestions (RIYL).
             </div>
           ) : (
@@ -147,7 +147,7 @@ function MainPanel({
                   className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed border ${
+                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm font-light leading-relaxed border ${
                       msg.sender === "user"
                       ? "bg-zinc-950 text-pollen border-pollen"
                       : "bg-zinc-950 text-pollen border-pollen"
@@ -182,7 +182,7 @@ function MainPanel({
               aria-label="Message input"
             />
             <button
-              className="rounded-lg bg-black border border-pollen px-3 py-2 text-xs font-semibold text-white hover:bg-black disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              className="rounded-lg bg-black border border-pollen px-3 py-2 text-sm font-semibold text-white hover:bg-black disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               onClick={onSend}
               disabled={loading}
               title="Generate recommendations"
@@ -280,7 +280,7 @@ function AppShell({
           <div className="absolute left-0 top-0 h-full w-72 border-r border-pollen bg-black shadow-2xl">
             <div className="flex items-center justify-end border-b border-pollen px-4 py-3">
               <button
-                className="rounded-lg bg-black border border-pollen px-3 py-2 text-xs font-semibold text-white hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="rounded-lg bg-black border border-pollen px-3 py-2 text-sm font-semibold text-white hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                 onClick={() => setIsSidebarOpen(false)}
                 aria-label="Close sidebar"
               >

@@ -8,6 +8,11 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        flexa: ["var(--font-cyan-font-gt-flexa)", "monospace"],
+        sans: ["var(--font-cyan-font-gt-flexa)", "monospace"],
+        mono: ["var(--font-cyan-font-gt-flexa)", "monospace"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",

@@ -76,6 +76,13 @@ button, input, optgroup, select, textarea {
   background: #222222;
 }
 
+.truncate-text {
+  max-width: 23ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:var(--pollen);
+}
+
 @media (max-width: 639px) {
   input, textarea, select, [contenteditable="true"] {
     font-size: 16px !important;
