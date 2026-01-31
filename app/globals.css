@@ -13,13 +13,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 :root {
   --background: #0a0a0a;
-  --foreground: #FF0000;
-  --ar: #f7f7f7 ;
+  --foreground: #FFFF00;
+  --pollen: #FFFF00;
+  --goldPollen: gold;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* * {
+  color: var(--pollen);
+  border-color: var(--goldPollen);
+} */
+
+.text-pollen {
+  color: var(--pollen);
+}
+
+.border-pollen {
+  border-color: var(--goldPollen);
+  border-style: groove;
 }
 
 ::selection {
@@ -28,7 +42,7 @@ body {
 }
 
 * {
-  border-color: var(--ar);
+  border-color: var(--pollen);
 }
 
 body {
@@ -37,20 +51,17 @@ body {
   font-family: cyanFontFour;
 }
 
-/* Ensure app title styling is applied */
 .app-title {
   font-size: 1rem;
   font-weight: normal;
 }
 
-/* List styling */
 ol, ul, menu {
   list-style: auto;
   margin-left: 2rem;
   padding: 0rem;
 }
 
-/* Form elements */
 button, input, optgroup, select, textarea {
   font-family: inherit;
   font-feature-settings: inherit;

@@ -31,9 +31,9 @@ const makeId = () => {
 
 function Spinner() {
   return (
-    <div className="flex items-center gap-2 text-zinc-300">
-      <span className="h-4 w-4 rounded-full border-2 border-zinc-500 border-t-transparent animate-spin" />
-      <span className="text-xs">Finding music rex...</span>
+    <div className="flex items-center gap-2 text-pollen">
+      <span className="h-4 w-4 rounded-full border-2 border-pollen border-t-transparent animate-spin" />
+      <span className="text-xs">Finding your curated music rex ...</span>
     </div>
   );
 }
@@ -57,10 +57,10 @@ function Sidebar({
 }) {
   return (
     <div className="flex h-full flex-col">
-      <div className="p-4 border-b border-dotted border-zinc-700">
-        <div className="text-sm font-semibold tracking-wide text-zinc-100">AI Music Recommendations</div>
+      <div className="p-4 border-b border-dotted border-pollen">
+        <div className="text-sm font-semibold tracking-wide text-pollen">AI RIYL Music Recommendations</div>
         <button
-          className="mt-3 w-full rounded-lg border border-zinc-700 bg-black px-3 py-2 text-sm text-zinc-100 hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+          className="mt-3 w-full rounded-lg border border-pollen bg-black px-3 py-2 text-sm text-pollen hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
           onClick={onNewChat}
           aria-label="New Chat"
         >
@@ -68,7 +68,7 @@ function Sidebar({
         </button>
         <div className="mt-3">
           <input
-            className="w-full rounded-lg border border-zinc-800 bg-black px-3 py-2 text-sm text-zinc-100 placeholder:text-zinc-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            className="w-full rounded-lg border border-pollen bg-black px-3 py-2 text-sm text-pollen placeholder:text-slate-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
             value={searchValue}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search"
@@ -78,16 +78,17 @@ function Sidebar({
       </div>
       <div className="flex-1 overflow-y-auto p-4">
         {chats.length === 0 ? (
-          <div className="px-3 py-4 text-xs text-zinc-300">No chats yet</div>
+          <div className="px-3 py-4 text-xs text-pollen">No chats yet</div>
         ) : (
           <div className="space-y-1">
+            <h3 className="text-sm text-light tracking-wide italic uppercase mt-4 mb-2" aria-label="Your History" title="Your History">Your History</h3>
             {chats.map((chat) => {
               const isActive = chat.id === selectedChatId;
               return (
                 <div
                   key={chat.id}
                   className={`group flex items-center justify-between rounded-lg px-3 py-2 text-sm bg-zinc-900 hover:bg-zinc-900 ${
-                    isActive ? "text-zinc-100" : "text-zinc-300"
+                    isActive ? "text-pollen" : "text-pollen"
                   }`}
                 >
                   <button
@@ -98,7 +99,7 @@ function Sidebar({
                     {chat.title}
                   </button>
                   <button
-                    className="ml-2 rounded p-1 !bg-zinc-900 text-zinc-300 hover:text-zinc-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                    className="ml-2 rounded p-1 !bg-zinc-900 text-pollen hover:text-pollen focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                     onClick={() => onDeleteChat(chat.id)}
                     aria-label="Delete chat"
                   >
@@ -134,8 +135,8 @@ function MainPanel({
       <div className="flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-3xl px-4 py-6 space-y-4">
           {messages.length === 0 ? (
-            <div className="rounded-2xl border border-zinc-800 bg-black p-6 text-sm text-zinc-100">
-              Ask for music recommendations and get curated suggestions.
+            <div className="rounded-2xl border border-pollen bg-black p-6 text-sm text-pollen">
+              Ask for music recommendations and get curated suggestions (RIYL).
             </div>
           ) : (
             messages.map((msg, index) => {
@@ -148,8 +149,8 @@ function MainPanel({
                   <div
                     className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed border ${
                       msg.sender === "user"
-                      ? "bg-zinc-950 text-zinc-100 border-zinc-700"
-                      : "bg-zinc-950 text-zinc-100 border-zinc-700"
+                      ? "bg-zinc-950 text-pollen border-pollen"
+                      : "bg-zinc-950 text-pollen border-pollen"
                     }`}
                   >
                     {msg.sender === "bot" ? <ReactMarkdown>{msg.text}</ReactMarkdown> : msg.text}
@@ -160,7 +161,7 @@ function MainPanel({
           )}
           {loading && (
             <div className="flex justify-start">
-              <div className="rounded-2xl border border-zinc-800 bg-black px-4 py-3">
+              <div className="rounded-2xl border border-pollen bg-black px-4 py-3">
                 <Spinner />
               </div>
             </div>
@@ -170,9 +171,9 @@ function MainPanel({
       </div>
       <div className="bg-black backdrop-blur">
         <div className="mx-auto w-full max-w-3xl px-4 py-4">
-          <div className="flex items-center gap-2 rounded-xl border border-zinc-800 bg-black px-3 py-2">
+          <div className="flex items-center gap-2 rounded-xl border border-pollen bg-black px-3 py-2">
             <input
-              className="flex-1 !bg-black text-sm text-zinc-100 placeholder:text-zinc-300 focus:outline-none"
+              className="flex-1 !bg-black text-sm text-pollen placeholder:text-slate-100 focus:outline-none"
               value={input}
               onChange={(e) => onInputChange(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && !loading && onSend()}
@@ -181,7 +182,7 @@ function MainPanel({
               aria-label="Message input"
             />
             <button
-              className="rounded-lg bg-black border border-zinc-500 px-3 py-2 text-xs font-semibold text-white hover:bg-black disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              className="rounded-lg bg-black border border-pollen px-3 py-2 text-xs font-semibold text-white hover:bg-black disabled:opacity-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
               onClick={onSend}
               disabled={loading}
               title="Generate recommendations"
@@ -237,8 +238,8 @@ function AppShell({
   }, [isSidebarOpen]);
 
   return (
-    <div className="flex h-screen bg-black text-zinc-100">
-      <aside className="hidden md:flex w-72 shrink-0 border-r border-zinc-800 bg-black">
+    <div className="flex h-screen bg-black text-pollen">
+      <aside className="hidden md:flex w-72 shrink-0 border-r border-pollen bg-black">
         <Sidebar
           chats={chats}
           selectedChatId={selectedChatId}
@@ -250,9 +251,9 @@ function AppShell({
         />
       </aside>
       <main id="main" tabIndex={-1} className="flex flex-1 flex-col outline-none">
-        <div className="md:hidden flex items-center gap-3 border-b border-zinc-800 bg-black px-4 py-3">
+        <div className="md:hidden flex items-center gap-3 border-b border-pollen bg-black px-4 py-3">
           <button
-            className="rounded-lg border border-zinc-800 bg-black p-2 text-zinc-200 hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+            className="rounded-lg border border-pollen bg-black p-2 text-pollen hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
             onClick={() => setIsSidebarOpen(true)}
             aria-label="Open sidebar"
           >
@@ -276,11 +277,11 @@ function AppShell({
             onClick={() => setIsSidebarOpen(false)}
             aria-label="Close sidebar"
           />
-          <div className="absolute left-0 top-0 h-full w-72 border-r border-zinc-400 bg-black shadow-2xl">
-            <div className="flex items-center justify-between border-b border-zinc-400 px-4 py-3">
-              <div className="text-sm font-semibold text-zinc-100">AI Music Recommendations</div>
+          <div className="absolute left-0 top-0 h-full w-72 border-r border-pollen bg-black shadow-2xl">
+            <div className="flex items-center justify-between border-b border-pollen px-4 py-3">
+              <div className="text-sm font-semibold text-pollen">AI RIYL Music Recommendations</div>
               <button
-                className="rounded-lg bg-black border border-zinc-500 px-3 py-2 text-xs font-semibold text-white hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                className="rounded-lg bg-black border border-pollen px-3 py-2 text-xs font-semibold text-white hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                 onClick={() => setIsSidebarOpen(false)}
                 aria-label="Close sidebar"
               >
