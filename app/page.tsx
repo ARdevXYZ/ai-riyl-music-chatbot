@@ -60,7 +60,7 @@ function Sidebar({
       <div className="p-4 border-b border-dotted border-pollen">
         <div className="text-sm font-semibold tracking-wide text-pollen">AI RIYL Music Recommendations</div>
         <button
-          className="mt-3 w-full rounded-lg border border-pollen bg-black px-3 py-2 text-sm text-pollen hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+          className="mt-3 w-full rounded-lg border border-pollen bg-black px-3 py-2 text-sm text-pollen cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
           onClick={onNewChat}
           aria-label="New Chat"
         >

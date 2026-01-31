@@ -32,7 +32,7 @@ body {
 }
 
 .border-pollen {
-  border-color: var(--goldPollen);
+  border-color: var(--pollen);
   border-style: groove;
 }
 
