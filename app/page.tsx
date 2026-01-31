@@ -135,7 +135,7 @@ function MainPanel({
       <div className="flex-1 overflow-y-auto">
         <div className="mx-auto w-full max-w-3xl px-4 py-6 space-y-4">
           {messages.length === 0 ? (
-            <div className="rounded-2xl font-light border border-pollen bg-black p-6 text-sm text-pollen">
+            <div className="rounded-2xl border border-pollen bg-black p-6 text-sm text-pollen">
               Ask for music recommendations and get curated suggestions (RIYL).
             </div>
           ) : (
@@ -147,7 +147,7 @@ function MainPanel({
                   className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"}`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm font-light leading-relaxed border ${
+                    className={`max-w-[80%] rounded-2xl px-4 py-3 text-sm leading-relaxed border ${
                       msg.sender === "user"
                       ? "bg-zinc-950 text-pollen border-pollen"
                       : "bg-zinc-950 text-pollen border-pollen"
