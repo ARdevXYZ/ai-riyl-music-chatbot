@@ -37,8 +37,8 @@ body {
 }
 
 ::selection {
-  background: #00FF00 !important;
-  color: #000000 !important;
+  background: #FFFF00 !important;
+  color: #111111 !important;
 }
 
 * {
