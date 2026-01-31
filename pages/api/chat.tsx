@@ -24,7 +24,7 @@ export default async function handler(
   }
 
   // Concatenate the fixed instruction with the user prompt.
-  const concatenatedPrompt = `Give me 10 related music recommendations RIYL ${prompt}`;
+  const concatenatedPrompt = `Give me 9 related music recommendations RIYL ${prompt}`;
 
   try {
     const completion = await openai.chat.completions.create({

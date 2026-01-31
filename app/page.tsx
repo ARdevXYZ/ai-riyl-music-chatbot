@@ -32,7 +32,7 @@ const makeId = () => {
 function Spinner() {
   return (
     <div className="flex items-center gap-2 text-pollen">
-      <span className="h-4 w-4 rounded-full border-2 border-pollen border-t-transparent animate-spin" />
+      <span className="h-4 w-4 rounded-full border-2 border-[#FFFF00] border-t-[#00FFFF] animate-spin" />
       <span className="text-xs">Finding your curated music rex ...</span>
     </div>
   );
@@ -81,7 +81,7 @@ function Sidebar({
           <div className="px-3 py-4 text-xs text-pollen">No chats yet</div>
         ) : (
           <div className="space-y-1">
-            <h3 className="text-sm text-light tracking-wide italic uppercase mt-4 mb-2" aria-label="Your History" title="Your History">Your History</h3>
+            <h3 className="text-sm text-light tracking-wide italic uppercase mt-2 mb-2" aria-label="Your History" title="Your History">Your History</h3>
             {chats.map((chat) => {
               const isActive = chat.id === selectedChatId;
               return (
@@ -278,8 +278,7 @@ function AppShell({
             aria-label="Close sidebar"
           />
           <div className="absolute left-0 top-0 h-full w-72 border-r border-pollen bg-black shadow-2xl">
-            <div className="flex items-center justify-between border-b border-pollen px-4 py-3">
-              <div className="text-sm font-semibold text-pollen">AI RIYL Music Recommendations</div>
+            <div className="flex items-center justify-end border-b border-pollen px-4 py-3">
               <button
                 className="rounded-lg bg-black border border-pollen px-3 py-2 text-xs font-semibold text-white hover:bg-black focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
                 onClick={() => setIsSidebarOpen(false)}
